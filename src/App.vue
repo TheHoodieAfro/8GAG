@@ -18,7 +18,7 @@
             <v-list-item-title>Log in</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item to="/">
+        <v-list-item to="/home">
           <v-list-item-icon>
             <v-icon>mdi-star-outline</v-icon>
           </v-list-item-icon>

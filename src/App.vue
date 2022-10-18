@@ -1,14 +1,54 @@
 <template>
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" app>
-      <v-btn to="/">Home</v-btn>
-      <v-btn to="/favorites">Favorites</v-btn>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="text-h6"> Go to </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list dense nav>
+        <v-list-item to="/login">
+          <v-list-item-icon>
+            <v-icon>mdi-star-outline</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Log in</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item to="/">
+          <v-list-item-icon>
+            <v-icon>mdi-star-outline</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Home</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item to="/favorites">
+          <v-list-item-icon>
+            <v-icon>mdi-star-outline</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Favorites</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item to="/logout">
+          <v-list-item-icon>
+            <v-icon>mdi-star-outline</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Log out</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
     </v-navigation-drawer>
 
     <v-app-bar app color="deep-purple darken-4">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Application</v-toolbar-title>
+      <v-toolbar-title>8GAG</v-toolbar-title>
     </v-app-bar>
 
     <v-main>
@@ -21,10 +61,9 @@
 export default {
   name: "App",
 
-  components: {},
-
   data: () => ({
     drawer: null,
+    token: this.$store.state.token,
   }),
 };
 </script>

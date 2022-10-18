@@ -6,6 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     favorites: [],
+    token: false
   },
   mutations: {
     addToFavorites(state, payload) {

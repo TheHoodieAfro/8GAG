@@ -1,7 +1,8 @@
 <template>
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" app>
-      <!--  -->
+      <v-btn to="/">Home</v-btn>
+      <v-btn to="/favorites">Favorites</v-btn>
     </v-navigation-drawer>
 
     <v-app-bar app color="deep-purple darken-4">
@@ -11,7 +12,7 @@
     </v-app-bar>
 
     <v-main>
-      <!--  -->
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>

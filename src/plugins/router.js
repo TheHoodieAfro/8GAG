@@ -2,25 +2,31 @@ import VueRouter from "vue-router";
 import Vue from "vue";
 import HomeView from "../views/HomeView";
 import FavoritesView from "../views/FavoritesView";
-import LoginPage from '../LoginPage'
+import LoginView from '../views/LoginView'
+import MemesView from "../views/MemesView";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/home",
-    component: HomeView,
-  },
-
-  {
     path: "/",
-    component: LoginPage,
+    component: HomeView,
+    children: [
+      {
+        path: "/",
+        component: MemesView,
+      },
+    
+      {
+        path: "/favorites",
+        component: FavoritesView,
+      },
+    ]
   },
-
   {
-    path: "/favorites",
-    component: FavoritesView,
-  },
+    path: "/login",
+    component: LoginView,
+  }
 ];
 
 const router = new VueRouter({
